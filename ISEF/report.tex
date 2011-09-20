@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{geometry}         
+\geometry{a4paper}                   
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+\usepackage[version=3]{mhchem}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{lastpage}
+
+%header
+\renewcommand{\sectionmark}[1]{ \markboth{\sectionmark \ \thesection.\ #1}{}}
+
+\pagestyle{fancy}
+
+\lhead{}
+\chead{}
+\rhead{Fengning Ding, Jason Liu, Patrick Rall - \today}
+
+\lfoot{Page \thepage\ of \pageref{LastPage}}
+\cfoot{} 
+\rfoot{\nouppercase\leftmark}
+
+
+%titlepage
+\title{Orbit Determination of Asteroid 1951Lick using Method of Laplace and fitted Differential Corrections}
+\author{Fengning Ding, Jason Liu, Patrick Rall \\ ISEF 2012}
+\date{\today}                                           
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis arcu nec nulla scelerisque mattis. Etiam eget neque urna, vitae condimentum lectus. Vestibulum ut eros vitae orci iaculis vehicula. Nulla scelerisque, ante vel facilisis luctus, odio dolor ullamcorper sem, consectetur rhoncus lorem neque a mi. Aliquam ac nunc lorem. Morbi tempus dictum diam, at mollis nisi convallis nec. Curabitur ac libero nec ligula posuere fermentum non scelerisque erat. Suspendisse cursus rutrum dui, nec sollicitudin lectus lobortis ut. Nunc commodo aliquet lectus vitae venenatis.
+\end{abstract}
+
+\tableofcontents
+
+\clearpage
+
+%format
+\widowpenalty=300
+\clubpenalty=300
+\setlength{\parskip}{2ex plus 1.5ex minus 1.5ex}
+
+
+%content
+\section{Introduction}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis arcu nec nulla scelerisque mattis. Etiam eget neque urna, vitae condimentum lectus. Vestibulum ut eros vitae orci iaculis vehicula. Nulla scelerisque, ante vel facilisis luctus, odio dolor ullamcorper sem, consectetur rhoncus lorem neque a mi. Aliquam ac nunc lorem. Morbi tempus dictum diam, at mollis nisi convallis nec. Curabitur ac libero nec ligula posuere fermentum non scelerisque erat. Suspendisse cursus rutrum dui, nec sollicitudin lectus lobortis ut. Nunc commodo aliquet lectus vitae venenatis. Sed ornare dolor quis tellus dictum eu aliquet mi euismod. Donec ligula nisi, bibendum non eleifend vel, egestas a massa. Aliquam sed mattis felis. Cras erat mauris, placerat at pulvinar sed, ultricies vitae lorem. Nam non nisl et elit sollicitudin accumsan vitae nec orci. Proin ornare consectetur molestie.
+
+\subsection{Subsection}
+
+Quisque sagittis placerat est ut gravida. Vivamus at magna ac nisl cursus dictum. Pellentesque volutpat nisi quis quam iaculis convallis. Donec sit amet justo libero, non aliquet velit. Donec varius dolor id sem volutpat euismod. Nulla dapibus lacus quis nunc mattis venenatis. Curabitur quis nisi augue, sed semper justo. Vivamus eget est nec est ullamcorper placerat quis ut est. Nulla tortor massa, vehicula sit amet rhoncus quis, dapibus ac quam. Aenean tellus arcu, pellentesque et consequat dictum, ornare nec est. Etiam et erat ut justo luctus malesuada in eu quam. Nunc adipiscing aliquet volutpat. Morbi consequat erat id sapien iaculis aliquam tincidunt elit mattis. Quisque adipiscing dapibus luctus. In sollicitudin hendrerit dolor quis pharetra. Vestibulum aliquam ullamcorper magna, et posuere nibh posuere et. Ut id enim a sem consequat sagittis. Cras sodales sapien eget dolor sollicitudin ut auctor tellus ornare. Donec iaculis, nulla et vestibulum placerat, lectus ante luctus orci, id sodales erat velit eu purus.
+
+\section{Section}
+
+\subsection{Subsection}
+
+Donec turpis tellus, consectetur vitae pharetra eget, tempus pellentesque metus. Sed eros mauris, tempor id vehicula sed, pellentesque sit amet arcu. Sed vitae lorem vel eros congue posuere eget a elit. Aliquam tempor urna viverra purus viverra ornare. Suspendisse et dictum ipsum. Nunc felis erat, faucibus sodales sodales sit amet, condimentum eu orci. Duis consequat aliquam enim consequat adipiscing. Nullam lobortis gravida egestas. Aliquam venenatis tristique magna vel consectetur. Praesent risus mauris, facilisis sed mattis sed, vehicula eu arcu. Praesent justo erat, ultricies eu feugiat nec, bibendum a lacus. Duis felis mi, varius eu iaculis sit amet, fringilla quis ante. Donec diam sapien, condimentum id laoreet in, cursus sed mi.
+
+\subsection{Subsection}
+
+Donec turpis tellus, consectetur vitae pharetra eget, tempus pellentesque metus. Sed eros mauris, tempor id vehicula sed, pellentesque sit amet arcu. Sed vitae lorem vel eros congue posuere eget a elit. Aliquam tempor urna viverra purus viverra ornare. Suspendisse et dictum ipsum. Nunc felis erat, faucibus sodales sodales sit amet, condimentum eu orci. Duis consequat aliquam enim consequat adipiscing. Nullam lobortis gravida egestas. Aliquam venenatis tristique magna vel consectetur. Praesent risus mauris, facilisis sed mattis sed, vehicula eu arcu. Praesent justo erat, ultricies eu feugiat nec, bibendum a lacus. Duis felis mi, varius eu iaculis sit amet, fringilla quis ante. Donec diam sapien, condimentum id laoreet in, cursus sed mi.
+
+\subsection{Subsection}
+
+Donec turpis tellus, consectetur vitae pharetra eget, tempus pellentesque metus. Sed eros mauris, tempor id vehicula sed, pellentesque sit amet arcu. Sed vitae lorem vel eros congue posuere eget a elit. Aliquam tempor urna viverra purus viverra ornare. Suspendisse et dictum ipsum. Nunc felis erat, faucibus sodales sodales sit amet, condimentum eu orci. Duis consequat aliquam enim consequat adipiscing. Nullam lobortis gravida egestas. Aliquam venenatis tristique magna vel consectetur. Praesent risus mauris, facilisis sed mattis sed, vehicula eu arcu. Praesent justo erat, ultricies eu feugiat nec, bibendum a lacus. Duis felis mi, varius eu iaculis sit amet, fringilla quis ante. Donec diam sapien, condimentum id laoreet in, cursus sed mi.
+
+\section{Conclusion}
+
+Quisque sagittis placerat est ut gravida. Vivamus at magna ac nisl cursus dictum. Pellentesque volutpat nisi quis quam iaculis convallis. Donec sit amet justo libero, non aliquet velit. Donec varius dolor id sem volutpat euismod. Nulla dapibus lacus quis nunc mattis venenatis. Curabitur quis nisi augue, sed semper justo. Vivamus eget est nec est ullamcorper placerat quis ut est. Nulla tortor massa, vehicula sit amet rhoncus quis, dapibus ac quam. Aenean tellus arcu, pellentesque et consequat dictum, ornare nec est. Etiam et erat ut justo luctus malesuada in eu quam. Nunc adipiscing aliquet volutpat. Morbi consequat erat id sapien iaculis aliquam tincidunt elit mattis. Quisque adipiscing dapibus luctus. In sollicitudin hendrerit dolor quis pharetra. Vestibulum aliquam ullamcorper magna, et posuere nibh posuere et. Ut id enim a sem consequat sagittis. Cras sodales sapien eget dolor sollicitudin ut auctor tellus ornare. Donec iaculis, nulla et vestibulum placerat, lectus ante luctus orci, id sodales erat velit eu purus.
+
+
+\begin{thebibliography}{2}
+\bibitem{bib:book1}
+  Book 1
+
+\bibitem{bib:book2}
+  Book 2
+
+\end{thebibliography}
+
+\end{document}  

@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		44948BF1141E81B6007C4C15 /* Render Report */ = {
+		44948BF1141E81B6007C4C15 /* SSP Report */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 44948BF2141E81B6007C4C15 /* Build configuration list for PBXAggregateTarget "Render Report" */;
+			buildConfigurationList = 44948BF2141E81B6007C4C15 /* Build configuration list for PBXAggregateTarget "SSP Report" */;
 			buildPhases = (
 				44948BF5141E81CC007C4C15 /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = "Render Report";
+			name = "SSP Report";
 			productName = "Render Report";
 		};
 		44BC1C0D142278EE0095AD52 /* GOS */ = {
@@ -28,6 +28,17 @@
 			);
 			name = GOS;
 			productName = GOS;
+		};
+		8DC357381428CE53001724AF /* ISEF Report */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8DC357391428CE54001724AF /* Build configuration list for PBXAggregateTarget "ISEF Report" */;
+			buildPhases = (
+				8DC3573C1428CE64001724AF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "ISEF Report";
+			productName = "ISEF Report";
 		};
 /* End PBXAggregateTarget section */
 
@@ -55,6 +66,9 @@
 		44BC1C0B142278DE0095AD52 /* Jul8Series3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jul8Series3.png; sourceTree = "<group>"; };
 		44BC1C0C142278DE0095AD52 /* Jul8Series4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jul8Series4.png; sourceTree = "<group>"; };
 		44BC1C12142279230095AD52 /* GlobalObservationSummary.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = GlobalObservationSummary.pdf; sourceTree = "<group>"; };
+		8DC357321428CD8C001724AF /* report.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = report.pdf; sourceTree = "<group>"; };
+		8DC357341428CD8C001724AF /* report.tex */ = {isa = PBXFileReference; lastKnownFileType = text; path = report.tex; sourceTree = "<group>"; };
+		8DC357371428CDF7001724AF /* Abstract.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Abstract.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -63,6 +77,7 @@
 			children = (
 				44BC1BFB142278DE0095AD52 /* GOS */,
 				44948BEA141E804B007C4C15 /* Report */,
+				8DC3572F1428CD8C001724AF /* ISEF */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +134,16 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		8DC3572F1428CD8C001724AF /* ISEF */ = {
+			isa = PBXGroup;
+			children = (
+				8DC357371428CDF7001724AF /* Abstract.pdf */,
+				8DC357341428CD8C001724AF /* report.tex */,
+				8DC357321428CD8C001724AF /* report.pdf */,
+			);
+			path = ISEF;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXProject section */
@@ -139,8 +164,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				44948BF1141E81B6007C4C15 /* Render Report */,
+				44948BF1141E81B6007C4C15 /* SSP Report */,
 				44BC1C0D142278EE0095AD52 /* GOS */,
+				8DC357381428CE53001724AF /* ISEF Report */,
 			);
 		};
 /* End PBXProject section */
@@ -171,6 +197,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd $SRCROOT/GOS\n/usr/local/texlive/2010/bin/x86_64-darwin/pdflatex GlobalObservationSummary.tex";
+		};
+		8DC3573C1428CE64001724AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $SRCROOT/ISEF\n/usr/local/texlive/2010/bin/x86_64-darwin/pdflatex report.tex";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -215,6 +254,20 @@
 			};
 			name = Release;
 		};
+		8DC3573A1428CE54001724AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8DC3573B1428CE54001724AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -227,7 +280,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		44948BF2141E81B6007C4C15 /* Build configuration list for PBXAggregateTarget "Render Report" */ = {
+		44948BF2141E81B6007C4C15 /* Build configuration list for PBXAggregateTarget "SSP Report" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				44948BF3141E81B6007C4C15 /* Debug */,
@@ -241,6 +294,15 @@
 			buildConfigurations = (
 				44BC1C0F142278EE0095AD52 /* Debug */,
 				44BC1C10142278EE0095AD52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DC357391428CE54001724AF /* Build configuration list for PBXAggregateTarget "ISEF Report" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DC3573A1428CE54001724AF /* Debug */,
+				8DC3573B1428CE54001724AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
