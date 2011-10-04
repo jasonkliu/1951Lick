@@ -143,6 +143,33 @@ July 25 & Meade 14'' & Pheceta  & Clear &5 \\ \cline{4-5}
 \caption{List of series taken in observations \label{tab:serieslist}}
 \end{table}
 
+% Jason:
+% Values truncated to 3 decimal points except for eccentricity, which is truncated to 4
+% Longitude of the Ascending Node = \Omega
+% Argument of Periapsis = \omega
+% Inclination = Inclination from the plane of the Ecliptic
+\begin{table}[!t]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Corrections & Semimajor Axis & Eccentricity & Inclination & $\Omega$ & $\omega$ & Julian Date \\ \hline
+0&1.376& 0.0699& 39.447& 129.761& 344.711& 2455602.859\\ \hline
+1&1.342& 0.0576& 38.968& 131.535& 163.598& 2455298.593\\ \hline
+2&1.384& 0.0592& 39.078& 130.852& 142.718& 2455243.991\\ \hline
+3&1.389& 0.0604& 39.087& 130.777& 140.797& 2455238.203\\ \hline
+4&1.389& 0.0604& 39.088& 130.773& 140.700& 2455237.901\\ \hline
+5&1.389& 0.0605& 39.088& 130.772& 140.695& 2455237.885\\ \hline
+\end{tabular}
+\caption{Differences in Orbital Elements from Differential Corrections \label{tab:serieslist}}
+\end{table}
+%Raw data, unrounded
+%0&1.3766035215401096& 0.06997446812565715& 39.44781866977861& 129.7614534299708& 344.7116012568043& 2455602.859316132\\ \hline
+%1&1.3423383188366207& 0.05768738306409427& 38.96823769414439& 131.53531616594654& 163.5983262776644& 2455298.5932372855\\ \hline
+%2&1.3842878078945084& 0.05928210261368569& 39.0789473200299& 130.85282752510196& 142.7180273678682& 2455243.9911087709\\ \hline
+%3&1.3890503884428982& 0.06043559929460861& 39.087917298618066& 130.77735158590974& 140.79748251029957& 2455238.2032962036\\ \hline
+%4&1.3893056930560388& 0.06049822248216378& 39.08838828651445& 130.7730350178457& 140.7004176875553& 2455237.9013916105\\ \hline
+%5&1.3893190141738032& 0.06050145320195732& 39.088412961745505& 130.77280730057913& 140.69537679147354& 2455237.8856797474\\ \hline
+
 \subsection{Least-Squares Plate Reduction}
 Using a Python program, LSPR was performed on each series of images.
 The centroids of numerous bright reference stars were obtained using MaxIm DL and compiled in a document along with the stars' $\alpha$ and $\delta$ as given by NOMAD. 
