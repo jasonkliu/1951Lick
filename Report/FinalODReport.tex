@@ -13,12 +13,16 @@ pdfkeywords={Summer Science Program, 1951 Lick, Orbit Determination}}
 %David: Let's follow some LaTex etiquette and put
 %different sentences, phrases, large chunks, whatever in separate lines.
 %Then, on git-hub, we would know precisely which sentence has changed.
+%Jason: When you submit this, make sure to say something along the lines of "Please note there are
+%two other co-authors". Otherwise, some anti-plagarism software may detect something.
+%Jason: I removed the PDF from .gitignore. It's too annoying (at least in the GUI) when I render the PDF
+%and then I can't sync Github because I have to "apply changes to the PDF" because the .gitignore is messed up.
 
 \begin{document}
 
 \title{Orbit Determination of 1951 Lick}
 
-\author{Fengning~Ding,~Jason~Liu,~Patrick~Rall \\Summer Science Program 2011 at Westmont College}%
+\author{Fengning~Ding,~Jason~Karl~Liu,~Patrick~Rall \\Summer Science Program 2011 at Westmont College}%
 % Jason: I'm not sure if it's necessary to put "Summer Science Program Westmont 2011" here (or down below).
 \markboth{Orbit Determination of 1951 Lick}{}
 
@@ -30,20 +34,17 @@ pdfkeywords={Summer Science Program, 1951 Lick, Orbit Determination}}
 During the summer of 2011, 
 the asteroid 1951 Lick was observed on seven days using a 14'' Meade telescope and the 24'' Keck Telescope at Westmont College.
 From seventeen usable images, the right ascension and declination of the asteroid were measured using least-squares plate reductions. 
-Because the asteroid had just completed a retrograde loop at the time of observation, the rate of change of the range vector was small and difficult to compute.  
+Because the asteroid had just completed a retrograde loop at the time of observation, the rate of change of the vector from the Earth to the asteroid was small and difficult to compute.  
 Existing well-developed orbital determination methods such as Gauss-Gibbs's method and Laplace's method are very sensitive to this rate of change, 
 and both methods failed to give accurate orbital parameters. 
 By using Laplace's method to first give reasonably correct estimates and then using five iterations of differential corrections to refine the preliminary results, it was possible to compute the orbit of the asteroid. 
-While for most situations one iteration of differential corrections is enough, the inaccuracy of the initial estimate required multiple iterations to compensate.
+While one iteration of differential corrections is often sufficient to accurately refine the result, the initial estimate required multiple iterations to compensate for the asteroid's position in its orbit.
 This method produced spectacular results; 
-relative to an observation made on July 19, the ephemeris calculated from the orbital elements determined was within 0.112 seconds of the right ascension and 1.56 arcseconds of the declination of the observed coordinates of the asteroid.  
-The orbital elements from this analysis were consistent with previously determined measurements. 
-This research demonstrates the possibility of computing orbits even in adverse situations and allows the usage of previously unusable data to furnish excellent orbital parameters.
+relative to an observation made on July 19, the ephemeris calculated from the orbital elements determined was within 0.112 seconds of the right ascension and 1.56 arcseconds of the declination of the observed coordinates of the asteroid, confirming the consistency of the orbital elements from this analysis with those of previously determined measurements. 
+This research demonstrates the possibility of computing orbits and furnishing excellent orbital parameters even in adverse situations.
 
 \end{abstract}
 }
-
-%and a 20.5 x 16.4 mm CCD Camera (1280 x 1024 pixels)
 
 \maketitle
 
@@ -56,24 +57,23 @@ to the potential of some near-Earth asteroids to collide with Earth,
 astronomers are especially interested in the orbits of near-Earth asteroids.
 To ensure accurate monitoring of these hazardous objects, 
 which often move in chaotic orbits perturbed by other planets, 
-astronomers need to repeatedly measure the position and velocity with high precision to determine the orbit of the asteroid,
-which is characterized by six parameters
-corresponding to the six degrees of freedom of the initial conditions: %David: Do you like this tidbit? it can be deleted if you guys object
+astronomers need to repeatedly measure the position and velocity with high precision.  
+The asteroid's orbit is characterized by six parameters
+corresponding to the six degrees of freedom of the initial conditions: 
+%David: Do you like this tidbit? it can be deleted if you guys object
 %Pato: yes, I do. Showing off is always good.
 the semimajor axis $a$, 
 the eccentricity $e$, 
 the inclination with respect to the plane of the Earth's orbit $i$, 
 the longitude of the ascending node with respect to the vernal equinox $\Omega$, 
 the argument of the perihelion $\omega$, 
-and the time of the last perihelion passage $T_p$.  
+and the time of the last perihelion passage $T_p$.  eq
 These orbital parameters can be used to locate the asteroid in the sky or to generate the position of the asteroid in the future.
 
 In July 2011, as part of the Summer Science Program at Westmont College, the orbit of the asteroid 1951 Lick was determined. 
-A 14''~telescope and the 24''~Keck Telescope at Westmont College were used to take seventeen images on seven different nights 
-to determine the asteroid's right ascension $\alpha$ and declination $\delta$ at specific times.
+A 14''~Meade telescope and the 24''~Keck Telescope at Westmont College were used to take seventeen images on seven different nights. 
+These images were subsequently used to determine the asteroid's right ascension $\alpha$ and declination $\delta$ at specific times.
 The dataset of seventeen images is augmented by data collected by another team (Hyde, Shah, and Zhao) observing 1951 Lick.
-%Jason: Do we even need to include this line?
-%Pato: Yes, we do.
 
 Because the asteroid was leaving a retrograde loop, 
 the equatorial unit vector $\hat{\rho}$ from the Earth to the asteroid changed very slowly, 
@@ -82,19 +82,22 @@ to give nonsensical values.
 Laplace's method, 
 another classical method of orbit determination, 
 also initially gave inaccurate results, 
-but five iterations of diiferntial corrections 
+but five iterations of differential corrections 
 corrected the approximate values returned by Laplace's method. 
-From the computed orbital elements, which are consistent with previous results, 
+From the computed orbital elements, which are consistent with previously generated results, 
 an ephemeris accurately matching the observed coordinates of the asteroid was produced.
+%Jason: I'm not sure about "which are consistent with previously generated results". 
+%I know that we're trying to compare it with HORIZONS, but I can't find a good way to word it.
 
-One novel aspect of this work is the application of multiple iterations of differential corrections. 
-To determine the orbit from most sets
-of observations, only one iteration is required to refine the results of either Gauss-Gibbs's method or Laplace's method.
-However, because of the adverse positions of the Earth and the asteroid in their orbits, 
-one iteration of differential corrections was not sufficient to correct for the
-rough estimates yielded by
-Laplace's method.
+%One novel aspect of this work is the application of multiple iterations of differential corrections. 
+%To determine the orbit from most sets
+%of observations, only one iteration is required to refine the results of either Gauss-Gibbs's method or Laplace's method.
+%However, because of the adverse positions of the Earth and the asteroid in their orbits, 
+%one iteration of differential corrections was not sufficient to correct for the
+%rough estimates yielded by
+%Laplace's method.
 %brevity is the soul of wit :) we have some redundant statements.
+%yes, agreed. It would be nice if this all fit on 5 pages. Therefore, I commented this section out. -Jason.
 We found that repeated iterations of differential corrections gave a series of orbital parameters that converged
 to an accurate value. 
 %David: "it was found that" Who found that? Dr. Faison? :)
@@ -113,15 +116,17 @@ with five iterations of differential corrections.
 
 \subsection{Observing and Image Processing}
 The asteroid was observed on seven days: July~1, July~3, July~8, July~10, July~16, July~19, and July~25, 2011 
-at 04:00-06:00 UTC.
-%\footnote{All times are given in Universal Coordinated Time (UTC) unless otherwise specified.} each day.
+at 04:00-06:00 Coordinated Universal Time (UTC).
+%\footnote{All times are given in Coordinated Universal Time (UTC) unless otherwise specified.} each day.
 %Footnote not needed since we only mention time once.
-First, 
-the approximate apparent $\alpha$ and $\delta$ of the asteroid was obtained from the
+First, the apparent $\alpha$ and $\delta$ of the asteroid was obtained from the
 %Multiple possesives are awkward. Hopefully people know JPL is part of NASA
-Jet Propulsion Laboratory's HORIZONS (JPL HORIZONS) ephemeris computation service.
+NASA Jet Propulsion Laboratory's HORIZONS ephemeris computation service.
 TheSkyX software by Software Bisque was used to generate a star chart of the region of the sky 
 in which the asteroid would be located.
+%Jason: I am against writing Software Bisque and Diffraction Limited. They are not well known 
+%companies; it is likely a reader would either search the software online if interested or just 
+%continue reading. The name of the company itself is just distracting.
 After synchronizing and focusing the telescope on a nearby star, 
 three or four series of five or seven images were taken 
 with an exposure time of 45 seconds per image. For details see Table~\ref{tab:serieslist}.
@@ -131,11 +136,14 @@ data was collected for the apparent $\alpha$ and $\delta$,
 which compensated for various systematic errors such as atmospheric distortion.
 However, the telescope already corrects for these effects, 
 and so the asteroid was always located near the edge of the image. 
-This error was discovered on July 19, and was eliminated in subsquent observations.
+This error was discovered on July 19, and was eliminated in subsequent observations.
 
 To remove noise and `hot pixels' (pixels that had been overexposed by a cosmic ray), 
+%Jason: This IEEE format makes the apostrophe marks look weird. The left apostrophe goes from
+%the bottom left to the top right, while it should go from the top left to the bottom right. However,
+%I don't see any way of fixing it.
 the images for each series were flat-field corrected, manually aligned, and median combined 
-using the MaxIm DL software by Diffraction Limited to form three processed images per observation.
+using the software MaxIm DL to form three processed images per observation.
 The asteroid was identified on the three processed images of each observation 
 by aligning and `blinking' (changing images over a short time period) the three images.
 For an example of a processed image see Fig.~\ref{fig:exampleseries}.
@@ -179,41 +187,42 @@ July 25 & Meade 14'' & Phecda & Clear &5 \\ \cline{4-5}
 \end{table}
 
 \subsection{Least-Squares Plate Reduction}
-Using a Python program written by the authors that implements LSPR, 
-the equatorial coordinates of the asteroid in each image was calculated.
+Using a Python program written by the authors that implements least-squares plate reduction (LSPR), 
+the equatorial coordinates of the asteroid in each image were calculated.
 %LSPR means nothing to people; our goal is not LSPR, but to find asteroid coordinates.
-LSPR is a process to find the mapping from the $xy$ plate coordinates of bright reference stars 
+LSPR is a process to find the mapping from the $x$ and $y$ plate coordinates of bright reference stars 
 (which are obtained from Maxim DL) to the equatorial coordinates
 of each star tabulated in the NOMAD database.
-By applying this map to the $xy$ coordinates of the asteroid, the equatorial coordinates of
-the asteroid was obtained.
+By applying this map to the $x$ and $y$ coordinates of the asteroid, the equatorial coordinates of
+the asteroid were obtained.
+%Jason: I prefer $x$ and $y$ instead of $xy$. It reads easier to me.
 
-Before LSPR was performed, the effect of different angles of refraction for stars with higher and lower altitude 
-was accounted for. 
-By using the time of observation given by the FITS header of each image and taking into account the difference between the observatory's clock and the US Naval Observatory's clock, 
-the local sidereal time was calculated to convert the equatorial coordinates from NOMAD of each reference star 
+Before LSPR was performed, the effect of altitude on stars' angle of refraction was accounted for. 
+The time of observation given by each image's file information header and the difference between the 
+observatory's clock and the US Naval Observatory's clock were used to calculate the local sidereal time.
+This, in turn, was used to convert the equatorial coordinates of each reference star from NOMAD 
 into theoretical values for local coordinates of altitude and azimuth.
 Assuming an index of refraction of $n-1=58.2''$ for the atmosphere\footnote{Value as in [2]}, 
 the computed altitude of each star was adjusted to account for the resulting offset.
 %Pato: Where is this angular estimate from? Cite!
 The adjusted altitude and azimuth were then converted back to theoretical apparent equatorial coordinates.
 
-To find the mapping between the plate $xy$ coordinates and the equatorial $\alpha\delta$ coordinates by LSPR, 
-a least-squares linear fit that mapped the $xy$ plate coordinates of each star to its 
+To find the mapping between the plate $x$ and $y$ coordinates and the equatorial $\alpha$ and $\delta$ coordinates by LSPR, 
+a least-squares linear fit that mapped the $x$ and $y$ plate coordinates of each star to its 
 theoretical apparent equatorial coordinates was computed.
 Using this mapping, the apparent equatorial coordinates of the center of the image were obtained 
-to calculate the standard $\xi\eta$ coordinates for each reference star.\footnote{See [2]} 
+to calculate the standard $\xi$ and $\eta$ coordinates for each reference star.\footnote{See [2]} 
 Because the standard coordinates are truly linear functions of the plate coordinates, 
 a more accurate least-squares fit was computed that maps the plate coordinates to the standard coordinates.
-Using this linear transformation, the $\xi\eta$ coordinates of the asteroid were obtained, 
+Using this linear transformation, the $\xi$ and $\eta$ coordinates of the asteroid were obtained, 
 from which the apparent $\alpha$ and $\delta$ of the asteroid were calculated.
 Finally, the apparent equatorial coordinates were transformed back to equatorial coordinates 
 using the same index of refraction of the atmosphere.
 
 To obtain an estimate of the uncertainty of the $\alpha$ and $\delta$ of the asteroid, 
 the deviation of the predicted equatorial coordinates of each star 
-and the catalogued coordinates were computed assuming two degrees of freedom.
-This residual was possibly due to defects in the CCD chip and telescope mirror, 
+from the catalogued coordinates were computed assuming two degrees of freedom.
+This residual was possibly due to defects in the CCD chip or telescope mirror, 
 aberration of starlight, inaccurate tabulations of reference star coordinates, 
 or uncertainties in the centroid computations.
 
@@ -222,12 +231,12 @@ From the measured $\alpha$ and $\delta$ of the asteroid,
 the classical orbital elements of the asteroid were determined. 
 Because the asteroid had recently exited from a retrograde loop,
 the asteroid's position relative to Earth as a function of time was approximately a straight line,
-resulting in small values for the change in velocity 
+resulting in small values for the change in velocity.
 of the unit range vector $\hat{\rho}$, $\frac{d^2\hat{\rho}}{d\tau^2}$
 \footnote{$\tau$ is the modified time given by $\tau=kt$, for ordinary time $t$ 
-and the Gaussian gravitation constant $k=0.017...$.
+and the Gaussian gravitation constant $k=0.017...$
 All time derivatives in this section are with respect to modified time.}.
-The Gauss-Gibbs method of orbit determination\footnote{Described in [1]}, which is
+The Gauss-Gibbs method of orbit determination,\footnote{Described in [1]} which is
 sensitive to values of $\frac{d^2\hat{\rho}}{d\tau^2}$, produced unrealistic results, and so Laplace's method was used.
 
 Five observations were used to obtain $\frac{d\hat{\rho}}{d\tau}$ and $\frac{d^2\hat{\rho}}{d\tau^2}$ 
@@ -238,8 +247,17 @@ The middle range vectors give the position of the asteroid on July 8
 and were used to accurately estimate $\frac{d\hat{\rho}}{d\tau}$.
 The second derivative of $\hat{\rho}$ at the middle observation was approximated 
 using $\hat{\rho}_1$, $\hat{\rho}_3$, and $\hat{\rho}_5$, 
-the range vectors of the asteroid on June 27, July 8, and July 25 respectively
-\footnote{The June 27 data were obtained by Hyde, Shah, and Zhao}. %Data is always plural. please don't unedit the grammar.
+the range vectors of the asteroid on June 27, July 8, and July 25 respectively.
+\footnote{The June 27 data was obtained by Hyde, Shah, and Zhao} 
+%Data is always plural. please don't unedit the grammar.
+%Jason: Disagree. Data can be used in both the singular and plural forms, though some prefer it in the plural form only.
+%Consider: Much of this data is useless because of its lack of specifics.
+%Using "are" instead of "is" makes it ungrammatical because it is talking about "this" data.
+%Instead, "Many of these data are useless because of their lack of specifics" is correct.
+%However, in this case, we are talking about data from one day AND for one observation. So I suggest 
+%that we should use "was" instead of "were". If we said "The June 27, June 29, and June 30 data were
+%obtained...." this would be correct. 
+
 This time span was chosen to be large enough for the first derivative to change appreciably.
 
 %Jason: Is this footnote necessary? (about The June 27 data was obtained by the other team)
@@ -253,7 +271,7 @@ which was solved for $\hat{\rho_3}'$.
 The second derivative was calculated similarly but with $\hat{\rho}_1$ and $\hat{\rho}_5$ 
 instead of $\hat{\rho}_2$ and $\hat{\rho}_4$.
 From $\frac{d\hat{\rho}}{d\tau}$ and $\frac{d^2\hat{\rho}}{d\tau^2}$, 
-the standard Laplace method was used to generate the position and velocity vectors of the asteroid\footnote{See [1]}.
+the standard Laplace method was used to generate the position and velocity vectors of the asteroid.\footnote{See [1]}
 This calculation was done using a script written in Python.
 
 From the preliminary position and velocity, 
@@ -356,8 +374,7 @@ $130.7706 \pm 0.1415 ^{\circ}$ & $140.65 \pm 3.71 ^{\circ}$ & $2455237.7 \pm 11.
 \caption{Measured orbital elements of 1951 Lick \label{tab:orbitalelements}}
 \end{table}
 
-
-It is noted that the orbit of the asteroid is similar in eccentricity to that of Mars with 
+The eccentricity of the orbit of the asteroid is similar to that of Mars with 
 $e = 0.093$ \cite{bib:HORIZONS}, 
 and the point of perihelion is hard to distinguish from other points, 
 so the values for $\omega$ and $T_p$ are more difficult to determine than the other orbital elements.
@@ -413,16 +430,16 @@ The discrepancies are significantly less than the statistical errors.
 % David: Above sentences is redundant since we already pointed out discrepancies
 %are less than statistical errors.
 An ephemeris for July 19 generated from determined orbital elements was also calculated and compared to observations, 
-as in Table \ref{tab:observationcomparison}.
-Since orbital elements are constantly changing due to perturbations from planets,
-it is irrelevant to compare computed orbital elements with the 
-orbital elements from HORIZONS, because the orbital elements of this study 
-are fitted to the observations and not the orbit at any
-precise epoch.
+shown in Table \ref{tab:observationcomparison}.
+%Since orbital elements are constantly changing due to perturbations from planets,
+%it is irrelevant to compare computed orbital elements with the 
+%orbital elements from HORIZONS, because the orbital elements of this study 
+%are fitted to the observations and not the orbit at any precise epoch.
+%Jason: I don't like this at all. We first say "Oh, we compared it to HORIZONS". Then "Oh, 
+%we can't compare it to HORIZONS and it's a bad comparison".
 However, the accuracy of this orbit determination is of theoretical interest, because 
 it demonstrates that accurate orbits can be determined even if Gauss-Gibb's method fails to 
-deliver reasonable results and Laplace's method
-gives orbital elements that are fairly off.
+deliver reasonable results and Laplace's method gives orbital elements that are fairly off.
 %due to a non-ideal location of an asteroid with respect to the Earth.
 %David: First, the above phrase is a dangling modifier; it is unclear what it describes.
 %David: Second, we should be respectful of gauss and gibbs (don't say 'their methods gives nothing reasonable'
