@@ -23,7 +23,7 @@ pdfkeywords={Summer Science Program, 1951 Lick, Orbit Determination}}
 
 \title{Orbit Determination of 1951 Lick}
 
-\author{Fengning~Ding,~Jason~Karl~Liu,~Patrick~Rall \\Summer Science Program 2011 at Westmont College}%
+\author{Fengning~Ding,~Jason~K.~Liu,~Patrick~Rall \\Summer Science Program 2011 at Westmont College}%
 % Jason: Explanation for middle name in email.
 % Jason: I'm not sure if it's necessary to put "Summer Science Program Westmont 2011" here (or down below).
 % Pato: Well, it is practice to include affiliation of the authors. But you are right, our paper would seem more professional if it were independent. Huh. David?
@@ -207,10 +207,10 @@ July 25 & Meade 14'' & Phecda & Clear &5 \\ \cline{4-5}
 Using a Python program written by the authors that implements least-squares plate reduction (LSPR), 
 the equatorial coordinates of the asteroid in each image were calculated.
 %LSPR means nothing to people; our goal is not LSPR, but to find asteroid coordinates.
-LSPR is a process to find the mapping from the $x$ and $y$ plate coordinates of bright reference stars 
+LSPR is a process to find the mapping from the $x$,$y$ plate coordinates of bright reference stars 
 (which are obtained from Maxim DL) to the equatorial coordinates
 of each star tabulated in the NOMAD database.
-By applying this map to the $x$ and $y$ coordinates of the asteroid, the equatorial coordinates of
+By applying this map to the $x$,$y$ coordinates of the asteroid, the equatorial coordinates of
 the asteroid were obtained.
 %Jason: I prefer $x$ and $y$ instead of $xy$. It reads easier to me.
 %Pato: I argue $xy$ for the sake of brevity. It also highlights that $xy$ together form a plane, while $x$ and $y$ could just as much use $x$ and $\eta$. Lets settle this before we change anything.
@@ -223,26 +223,27 @@ observatory's clock and the US Naval Observatory's clock were used to calculate 
 %Pato: is FITS not something standardized? I think it is. But abstraction is preferred by me, even if the language is very awkward.
 This, in turn, was used to convert the equatorial coordinates of each reference star from NOMAD 
 into theoretical values for local coordinates of altitude and azimuth.
-Using an index of refraction of $n-1=58.2''$ for the atmosphere\footnote{Value as in [2]}, 
+Using an index of refraction of $n-1=58.2''$ for the atmosphere,\footnote{Value as in [2]} 
 the computed altitude of each star was adjusted to account for the resulting offset.
 %Pato: Where is this angular estimate from? Cite!
 %Pato: Thank you. How is this an assumption?
 %David: Good point. Word choice is essential.
 The adjusted altitude and azimuth were then converted back to theoretical apparent equatorial coordinates.
 
-To find the mapping between the plate $x$ and $y$ coordinates and the equatorial $\alpha$ and $\delta$ coordinates by LSPR, 
-a least-squares linear fit that mapped the $x$ and $y$ plate coordinates of each star to its 
+To find the mapping between the plate $x$,$y$ coordinates and the equatorial $\alpha$ and $\delta$ coordinates by LSPR, 
+a least-squares linear fit that mapped the $x$,$y$ plate coordinates of each star to its 
 theoretical apparent equatorial coordinates was computed.
 Using this mapping, the apparent equatorial coordinates of the center of the image were obtained 
-to calculate the standard $\xi$ and $\eta$ coordinates for each reference star.\footnote{See [2]} 
+to calculate the standard $\xi$,$\eta$ coordinates for each reference star.\footnote{See [2]} 
 Because the standard coordinates are truly linear functions of the plate coordinates, 
 a more accurate least-squares fit was computed that maps the plate coordinates to the standard coordinates.
-Using this linear transformation, the $\xi$ and $\eta$ coordinates of the asteroid were obtained, 
-from which the apparent $\alpha$ and $\delta$ of the asteroid were calculated.
+Using this linear transformation, the $\xi$,$\eta$ coordinates of the asteroid were obtained, 
+from which the apparent $\alpha$,$\delta$ of the asteroid were calculated.
 Finally, the apparent equatorial coordinates were transformed back to equatorial coordinates 
 using the same index of refraction of the atmosphere.
 
 To obtain an estimate of the uncertainty of the $\alpha$ and $\delta$ of the asteroid, 
+% Jason: alpha and delta here are no longer referring to the plane.
 the deviation of the predicted equatorial coordinates of each star 
 from the catalogued coordinates were computed assuming two degrees of freedom.
 This residual was possibly due to defects in the CCD chip or telescope mirror, 
@@ -251,6 +252,7 @@ or uncertainties in the centroid computations.
 
 \subsection{Orbit Determination using Laplace's Method}
 From the measured $\alpha$ and $\delta$ of the asteroid, 
+% Jason: alpha and delta here are no longer referring to the plane.
 the classical orbital elements of the asteroid were determined. 
 Because the asteroid had recently exited from a retrograde loop,
 the asteroid's position relative to Earth as a function of time was approximately a straight line,
@@ -261,6 +263,7 @@ All time derivatives in this section are with respect to modified time.}
 %Pato: The addition of a footnote here makes it looks like we are squaring the derivative. Hence placing the footnote BEHIND the period.
 %David: English custom says that footnotes should come before period. But the footnote is confusing
 %david: so ideally we should rephrase sentence, but I'll just let it be.
+%Jason: Footnotes should come before periods. Source: http://owl.english.purdue.edu/owl/resource/560/04/
 The Gauss-Gibbs method of orbit determination,\footnote{Described in [1]} which is
 sensitive to values of $\frac{d^2\hat{\rho}}{d\tau^2}$, produced unrealistic results, and so Laplace's method was used.
 
@@ -289,6 +292,7 @@ the range vectors of the asteroid on June 27, July 8, and July 25 respectively.\
 %but that doesn't make it any more correct. More than half the world do not believe in evolution or relativity
 %should we use the principle of "truth by democracy" to say the two theories are wrong?
 %Usage of plural data shows classical education and respect towards the academic/scientific world, which still prefer plural data.
+%Jason: Although I prefer data in the singular form here, I do not have a problem with it in the plural form.
 
 This time span was chosen to be large enough for the first derivative to change sufficiently.
 
@@ -332,9 +336,10 @@ Laplace's method gives inaccurate results for $\omega$ and $T_P$.
 %Pato: I do not see how we can argue improvement of time of perihelion of the HORIZONS value is more wrong than our initial value.
 %David: Recall we have periodic motion :) Maybe we should add the period of the asteroid=sqrt(a^3)
 %How should we do so? Using the correct value for a, or the incorrect values yielded 
-%in each iteration
+%in each iteration 
 %Or maybe a better way is to subtract a period from the JPL value.
 %Are we fixing this point? Any consensus?
+%Jason: I don't really have an opinion on this point, in regards to the 3 options you emailed.  Any of them would be acceptable.
 With one iteration of corrections, $\omega$ and $T_P$ are much more accurate, but the other orbital elements
 are over-corrected. Each subsequent iteration improves the value of all orbital elements.
 
