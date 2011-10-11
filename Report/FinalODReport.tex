@@ -28,6 +28,7 @@ pdfkeywords={Summer Science Program, 1951 Lick, Orbit Determination}}
 % Jason: I'm not sure if it's necessary to put "Summer Science Program Westmont 2011" here (or down below).
 % Pato: Well, it is practice to include affiliation of the authors. But you are right, our paper would seem more professional if it were independent. Huh. David?
 %Pato: Also, no middle names Jason. My name is Patrick Julian Tassilo Rall. There is no way I am writing that.
+% David: Pato's first point is correct. His second point is also correct, but Jason, you can write Jason K. Liu
 \markboth{Orbit Determination of 1951 Lick}{}
 
 \IEEEcompsoctitleabstractindextext{%
@@ -95,24 +96,26 @@ an ephemeris accurately matching the observed coordinates of the asteroid was pr
 %I know that we're trying to compare it with HORIZONS, but I can't find a good way to word it.
 %Pato: The point is that our data is not completely nonesensical. Its fine. That point comes across.
 
-%One novel aspect of this work is the application of multiple iterations of differential corrections. 
-%To determine the orbit from most sets
-%of observations, only one iteration is required to refine the results of either Gauss-Gibbs's method or Laplace's method.
-%However, because of the adverse positions of the Earth and the asteroid in their orbits, 
-%one iteration of differential corrections was not sufficient to correct for the
-%rough estimates yielded by
-%Laplace's method.
+One novel aspect of this work is the application of multiple iterations of differential corrections. 
+To determine the orbit from most sets
+of observations, only one iteration is required to refine the results of either Gauss-Gibbs's method or Laplace's method.
+However, because of the adverse positions of the Earth and the asteroid in their orbits, 
+one iteration of differential corrections was not sufficient to correct for the
+rough estimates yielded by
+Laplace's method. This extended orbital determination method could allow future astronomers to
+compute orbits of objects in similarly unfavorable circumstances.
+%David: Above sentence should in same paragraph.
 
 %brevity is the soul of wit :) we have some redundant statements.
 %yes, agreed. It would be nice if this all fit on 5 pages. Therefore, I commented this section out. -Jason.
 %Pato: What the hell? This is possibly the most important paragraph, highlighting our most significant development! Sure, we have mentioned the process itself before, but we need another paragraph to emphasize its originality!
-
+%David: I agree with Pato. My statement applied to the previous paragraph, which
+%is even more long-winded.
 %We found that repeated iterations of differential corrections gave a series of orbital parameters that converged to an accurate value. 
 %David: "it was found that" Who found that? Dr. Faison? :)
 %Pato: First, this has been stated many many times, I say we remove it. Second, I thought we agreed on passive voice, just for the sake of university submission.
 
-This extended orbital determination method could allow future astronomers to
-compute orbits of objects in similarly unfavorable circumstances.
+
 
 \section{Methods}
 The images used for orbit determination were taken using two telescopes.
@@ -139,6 +142,7 @@ in which the asteroid would be located.
 %companies; it is likely a reader would either search the software online if interested or just 
 %continue reading. The name of the company itself is just distracting.
 %Pato: I believe you two have a fundamentally different approach to scientific writing than I do. My mother is a nuclear power plant revisor, and that had some kind of impact on my style. EVERYTHING MUST BE REFERENCED APPROPRIATELY, and that includes giving credit to the people who wrote our software.
+%David: I agree with almost everything Pato said, except the part that I have different approach to this reference :)
 After synchronizing and focusing the telescope on a nearby star, 
 three or four series of five or seven images were taken 
 with an exposure time of 45 seconds per image. For details see Table~\ref{tab:serieslist}.
@@ -219,10 +223,11 @@ observatory's clock and the US Naval Observatory's clock were used to calculate 
 %Pato: is FITS not something standardized? I think it is. But abstraction is preferred by me, even if the language is very awkward.
 This, in turn, was used to convert the equatorial coordinates of each reference star from NOMAD 
 into theoretical values for local coordinates of altitude and azimuth.
-Assuming an index of refraction of $n-1=58.2''$ for the atmosphere\footnote{Value as in [2]}, 
+Using an index of refraction of $n-1=58.2''$ for the atmosphere\footnote{Value as in [2]}, 
 the computed altitude of each star was adjusted to account for the resulting offset.
 %Pato: Where is this angular estimate from? Cite!
 %Pato: Thank you. How is this an assumption?
+%David: Good point. Word choice is essential.
 The adjusted altitude and azimuth were then converted back to theoretical apparent equatorial coordinates.
 
 To find the mapping between the plate $x$ and $y$ coordinates and the equatorial $\alpha$ and $\delta$ coordinates by LSPR, 
@@ -254,6 +259,8 @@ of the unit range vector $\hat{\rho}$, $\frac{d^2\hat{\rho}}{d\tau^2}$.\footnote
 and the Gaussian gravitation constant $k=0.017...$
 All time derivatives in this section are with respect to modified time.}
 %Pato: The addition of a footnote here makes it looks like we are squaring the derivative. Hence placing the footnote BEHIND the period.
+%David: English custom says that footnotes should come before period. But the footnote is confusing
+%david: so ideally we should rephrase sentence, but I'll just let it be.
 The Gauss-Gibbs method of orbit determination,\footnote{Described in [1]} which is
 sensitive to values of $\frac{d^2\hat{\rho}}{d\tau^2}$, produced unrealistic results, and so Laplace's method was used.
 
@@ -265,7 +272,7 @@ The middle range vectors give the position of the asteroid on July 8
 and were used to accurately estimate $\frac{d\hat{\rho}}{d\tau}$.
 The second derivative of $\hat{\rho}$ at the middle observation was approximated 
 using $\hat{\rho}_1$, $\hat{\rho}_3$, and $\hat{\rho}_5$, 
-the range vectors of the asteroid on June 27, July 8, and July 25 respectively.\footnote{The June 27 data was obtained by Hyde, Shah, and Zhao} 
+the range vectors of the asteroid on June 27, July 8, and July 25 respectively.\footnote{The June 27 data were obtained by Hyde, Shah, and Zhao} 
 %Data is always plural. please don't unedit the grammar.
 %Jason: Disagree. Data can be used in both the singular and plural forms, though some prefer it in the plural form only.
 %Consider: Much of this data is useless because of its lack of specifics.
@@ -276,6 +283,12 @@ the range vectors of the asteroid on June 27, July 8, and July 25 respectively.\
 %obtained...." this would be correct. 
 %Pato: I looked it up. Both conventions are common. I prefer to stick with what Jason described. David, you have been outvoted.
 %Pato: Also, David, remember to sign your discussion comments.
+%David: Wow! I did not expect this to be so controversial!
+%David: But anyways, data is the plural of the latin noun datum. Although many people use data as singular
+%this does not make singular data any more correct. Consider: half the English-speaking world say "different than"
+%but that doesn't make it any more correct. More than half the world do not believe in evolution or relativity
+%should we use the principle of "truth by democracy" to say the two theories are wrong?
+%Usage of plural data shows classical education and respect towards the academic/scientific world, which still prefer plural data.
 
 This time span was chosen to be large enough for the first derivative to change sufficiently.
 
@@ -321,6 +334,7 @@ Laplace's method gives inaccurate results for $\omega$ and $T_P$.
 %How should we do so? Using the correct value for a, or the incorrect values yielded 
 %in each iteration
 %Or maybe a better way is to subtract a period from the JPL value.
+%Are we fixing this point? Any consensus?
 With one iteration of corrections, $\omega$ and $T_P$ are much more accurate, but the other orbital elements
 are over-corrected. Each subsequent iteration improves the value of all orbital elements.
 
@@ -453,15 +467,17 @@ The discrepancies are significantly less than the statistical errors.
 An ephemeris for July 19 generated from determined orbital elements was also calculated and compared to observations, 
 shown in Table \ref{tab:observationcomparison}.
 Since orbital elements are constantly changing due to perturbations from planets,
-it is irrelevant to compare computed orbital elements with the 
+it is irrelevant to compare ephemerides generaged from
+these orbital elements with those generated from
 orbital elements from HORIZONS, because the orbital elements of this study 
 are fitted to the observations and not the orbit at any precise epoch.
 %Jason: I don't like this at all. We first say "Oh, we compared it to HORIZONS". Then "Oh, 
 %we can't compare it to HORIZONS and it's a bad comparison".
 %Pato: The reaseon we compare it to HORIZONS is to show our data is not junk. But we do need to mention that this was an unfair comparison.
+%David: Sorry! I was trying to point out the ephemrides are irrelevant.
 However, the accuracy of this orbit determination is of theoretical interest, because 
-it demonstrates that accurate orbits can be determined even if Gauss-Gibbs's method fails to 
-deliver reasonable results and Laplace's method gives orbital elements that are not within reasonable accuracy.
+it demonstrates that accurate orbits can be determined even if Gauss-Gibbs's method diverges
+and Laplace's method gives orbital elements that are not within reasonable accuracy.
 %due to a non-ideal location of an asteroid with respect to the Earth.
 %David: First, the above phrase is a dangling modifier; it is unclear what it describes.
 %David: Second, we should be respectful of gauss and gibbs (don't say 'their methods gives nothing reasonable'
