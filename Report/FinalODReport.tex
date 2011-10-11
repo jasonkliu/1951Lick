@@ -107,8 +107,7 @@ an ephemeris accurately matching the observed coordinates of the asteroid was pr
 %yes, agreed. It would be nice if this all fit on 5 pages. Therefore, I commented this section out. -Jason.
 %Pato: What the hell? This is possibly the most important paragraph, highlighting our most significant development! Sure, we have mentioned the process itself before, but we need another paragraph to emphasize its originality!
 
-%We found that repeated iterations of differential corrections gave a series of orbital parameters that converged
-to an accurate value. 
+%We found that repeated iterations of differential corrections gave a series of orbital parameters that converged to an accurate value. 
 %David: "it was found that" Who found that? Dr. Faison? :)
 %Pato: First, this has been stated many many times, I say we remove it. Second, I thought we agreed on passive voice, just for the sake of university submission.
 
@@ -127,8 +126,8 @@ The orbital elements were determined using an implementation of Laplace's method
 with five iterations of differential corrections.
 
 \subsection{Observing and Image Processing}
-The asteroid was observed on seven days: July~1, July~3, July~8, July~10, July~16, July~19, and July~25, 2011 
-at 04:00-06:00 Coordinated Universal Time (UTC).
+The asteroid was observed on seven nights: July~1, July~3, July~8, July~10, July~16, July~19, and July~25, 2011 
+from 04:00 to 06:00 Coordinated Universal Time (UTC).
 %\footnote{All times are given in Coordinated Universal Time (UTC) unless otherwise specified.} each day.
 %Footnote not needed since we only mention time once.
 First, the apparent $\alpha$ and $\delta$ of the asteroid was obtained from the
@@ -251,8 +250,7 @@ the classical orbital elements of the asteroid were determined.
 Because the asteroid had recently exited from a retrograde loop,
 the asteroid's position relative to Earth as a function of time was approximately a straight line,
 resulting in small values for the change in velocity
-of the unit range vector $\hat{\rho}$, $\frac{d^2\hat{\rho}}{d\tau^2}$.
-\footnote{$\tau$ is the modified time given by $\tau=kt$, for ordinary time $t$ 
+of the unit range vector $\hat{\rho}$, $\frac{d^2\hat{\rho}}{d\tau^2}$.\footnote{$\tau$ is the modified time given by $\tau=kt$, for ordinary time $t$ 
 and the Gaussian gravitation constant $k=0.017...$
 All time derivatives in this section are with respect to modified time.}
 %Pato: The addition of a footnote here makes it looks like we are squaring the derivative. Hence placing the footnote BEHIND the period.
@@ -267,8 +265,7 @@ The middle range vectors give the position of the asteroid on July 8
 and were used to accurately estimate $\frac{d\hat{\rho}}{d\tau}$.
 The second derivative of $\hat{\rho}$ at the middle observation was approximated 
 using $\hat{\rho}_1$, $\hat{\rho}_3$, and $\hat{\rho}_5$, 
-the range vectors of the asteroid on June 27, July 8, and July 25 respectively.
-\footnote{The June 27 data was obtained by Hyde, Shah, and Zhao} 
+the range vectors of the asteroid on June 27, July 8, and July 25 respectively.\footnote{The June 27 data was obtained by Hyde, Shah, and Zhao} 
 %Data is always plural. please don't unedit the grammar.
 %Jason: Disagree. Data can be used in both the singular and plural forms, though some prefer it in the plural form only.
 %Consider: Much of this data is useless because of its lack of specifics.
@@ -280,7 +277,7 @@ the range vectors of the asteroid on June 27, July 8, and July 25 respectively.
 %Pato: I looked it up. Both conventions are common. I prefer to stick with what Jason described. David, you have been outvoted.
 %Pato: Also, David, remember to sign your discussion comments.
 
-This time span was chosen to be large enough for the first derivative to change appreciably.
+This time span was chosen to be large enough for the first derivative to change sufficiently.
 
 %Jason: Is this footnote necessary? (about The June 27 data was obtained by the other team)
 
@@ -348,7 +345,7 @@ Four iterations & 130.773& 140.700& 2455237.901\\ \hline
 Five iterations & 130.772& 140.695& 2455237.885\\ \hline 
 HORIZONS Value & 130.769445 & 140.4418 & 2455835.571 \\ \hline
 \end{tabular}
-\caption{\label{tab:iterations} 1951 Lick orbital element outputs of Laplace's method, iterations of differential correction, and JPL HORIZONS.}
+\caption{\label{tab:iterations} 1951 Lick orbital element outputs of Laplace's method, iterations of differential correction, and JPL HORIZONS}
 \end{table}
 
 To compute the uncertainties for the orbital elements, 
@@ -464,7 +461,7 @@ are fitted to the observations and not the orbit at any precise epoch.
 %Pato: The reaseon we compare it to HORIZONS is to show our data is not junk. But we do need to mention that this was an unfair comparison.
 However, the accuracy of this orbit determination is of theoretical interest, because 
 it demonstrates that accurate orbits can be determined even if Gauss-Gibbs's method fails to 
-deliver reasonable results and Laplace's method gives orbital elements that are fairly off.
+deliver reasonable results and Laplace's method gives orbital elements that are not within reasonable accuracy.
 %due to a non-ideal location of an asteroid with respect to the Earth.
 %David: First, the above phrase is a dangling modifier; it is unclear what it describes.
 %David: Second, we should be respectful of gauss and gibbs (don't say 'their methods gives nothing reasonable'
@@ -478,7 +475,7 @@ deliver reasonable results and Laplace's method gives orbital elements that are 
 
 \section*{Acknowledgments}
 
-The authors would like to thank Dr. Michael Faison, Mr. Martin Mason, and Mary Masterman, 
+The authors would like to thank Dr. Michael Faison, Martin Mason, and Mary Masterman, 
 Dougal Sutherland, Becky Raph, and Sean Mattingly for their help debugging Python scripts, assistance with observations, and teaching us the methodology used in this project.
 The authors are also grateful towards Jeremy Hyde, Pathik Shah, and Ming Zhao for sharing their
 data of 1951 Lick.
