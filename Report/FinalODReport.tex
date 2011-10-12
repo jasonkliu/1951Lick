@@ -116,62 +116,6 @@ compute orbits of objects in similarly unfavorable circumstances.
 %Pato: First, this has been stated many many times, I say we remove it. Second, I thought we agreed on passive voice, just for the sake of university submission.
 
 
-
-\section{Methods}
-The images used for orbit determination were taken using two telescopes.
-%David: Which telescopes? We didn't mention telescopes except in abstract!
-%Pato: Yes we have. In the introduction. Do you want to restate them?
-After median-combining these images into series to reduce noise, 
-a least-squares plate reduction (LSPR) was calculated
-using star coordinate data from the Naval Observatory Merged Astrometric Dataset (NOMAD) database. 
-These reductions yielded the right ascension $\alpha$ and declination $\delta$ for the asteroid at the observation times.
-The orbital elements were determined using an implementation of Laplace's method of orbit determination 
-with five iterations of differential corrections.
-
-\subsection{Observing and Image Processing}
-The asteroid was observed on seven nights: July~1, July~3, July~8, July~10, July~16, July~19, and July~25, 2011 
-from 04:00 to 06:00 Coordinated Universal Time (UTC).
-%\footnote{All times are given in Coordinated Universal Time (UTC) unless otherwise specified.} each day.
-%Footnote not needed since we only mention time once.
-First, the apparent $\alpha$ and $\delta$ of the asteroid was obtained from the
-%Multiple possesives are awkward. Hopefully people know JPL is part of NASA
-NASA Jet Propulsion Laboratory's HORIZONS ephemeris computation service.
-TheSkyX software by Software Bisque was used to generate a star chart of the region of the sky 
-in which the asteroid would be located.
-%Jason: I am against writing Software Bisque and Diffraction Limited. They are not well known 
-%companies; it is likely a reader would either search the software online if interested or just 
-%continue reading. The name of the company itself is just distracting.
-%Pato: I believe you two have a fundamentally different approach to scientific writing than I do. My mother is a nuclear power plant revisor, and that had some kind of impact on my style. EVERYTHING MUST BE REFERENCED APPROPRIATELY, and that includes giving credit to the people who wrote our software.
-%David: I agree with almost everything Pato said, except the part that I have different approach to this reference :)
-After synchronizing and focusing the telescope on a nearby star, 
-three or four series of five or seven images were taken 
-with an exposure time of 45 seconds per image. For details see Table~\ref{tab:serieslist}.
-
-When retrieving the approximate $\alpha$ and $\delta$ from JPL HORIZONS, 
-data was collected for the apparent $\alpha$ and $\delta$,
-which compensated for various systematic errors such as atmospheric distortion.
-However, the telescope already corrects for these effects, 
-and so the asteroid was always located near the edge of the image. 
-This error was discovered on July 19, and was eliminated in subsequent observations.
-
-To remove noise and `hot pixels' (pixels that had been overexposed by a cosmic ray), 
-%Jason: This IEEE format makes the apostrophe marks look weird. The left apostrophe goes from
-%the bottom left to the top right, while it should go from the top left to the bottom right. However,
-%I don't see any way of fixing it.
-%Pato: Yeah, I don't either. We should eventually switch to normal style.
-the images for each series were flat-field corrected, manually aligned, and median combined 
-using the MaxIm DL software by Diffraction Limited to form three processed images per observation.
-The asteroid was identified on the three processed images of each observation 
-by aligning and `blinking' (changing images over a short time period) the three images.
-For an example of a processed image see Fig.~\ref{fig:exampleseries}.
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.4in]{Jul10Series2.png}
-\caption{An example of a combined series of images: Series 2 of the observation on July 10 using the Meade 14'' telescope.\label{fig:exampleseries}}
-\label{fig_sim}
-\end{figure}
-
 \begin{table}[!t]
 \centering
 \begin{tabular}{|c|c|c|c|c|}
@@ -202,6 +146,61 @@ July 25 & Meade 14'' & Phecda & Clear &5 \\ \cline{4-5}
 \end{tabular}
 \caption{List of image series taken in observations of 1951 Lick in 2011\label{tab:serieslist}}
 \end{table}
+
+\section{Methods}
+The images used for orbit determination were taken using two telescopes.
+%David: Which telescopes? We didn't mention telescopes except in abstract!
+%Pato: Yes we have. In the introduction. Do you want to restate them?
+After median-combining these images into series to reduce noise, 
+a least-squares plate reduction (LSPR) was calculated
+using star coordinate data from the Naval Observatory Merged Astrometric Dataset (NOMAD) database. 
+These reductions yielded the right ascension $\alpha$ and declination $\delta$ for the asteroid at the observation times.
+The orbital elements were determined using an implementation of Laplace's method of orbit determination 
+with five iterations of differential corrections.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.4in]{Jul10Series2.png}
+\caption{An example of a combined series of images: Series 2 of the observation on July 10 using the Meade 14'' telescope.\label{fig:exampleseries}}
+\label{fig_sim}
+\end{figure}
+
+\subsection{Observing and Image Processing}
+The asteroid was observed on seven nights: July~1, July~3, July~8, July~10, July~16, July~19, and July~25, 2011 
+from 04:00 to 06:00 Coordinated Universal Time (UTC).
+%\footnote{All times are given in Coordinated Universal Time (UTC) unless otherwise specified.} each day.
+%Footnote not needed since we only mention time once.
+First, the apparent $\alpha$ and $\delta$ of the asteroid was obtained from the
+%Multiple possesives are awkward. Hopefully people know JPL is part of NASA
+NASA Jet Propulsion Laboratory's HORIZONS ephemeris computation service.
+TheSkyX software by Software Bisque was used to generate a star chart of the region of the sky 
+in which the asteroid would be located.
+%Jason: I am against writing Software Bisque and Diffraction Limited. They are not well known 
+%companies; it is likely a reader would either search the software online if interested or just 
+%continue reading. The name of the company itself is just distracting.
+%Pato: I believe you two have a fundamentally different approach to scientific writing than I do. My mother is a nuclear power plant revisor, and that had some kind of impact on my style. EVERYTHING MUST BE REFERENCED APPROPRIATELY, and that includes giving credit to the people who wrote our software.
+%David: I agree with almost everything Pato said, except the part that I have different approach to this reference :)
+After synchronizing and focusing the telescope on a nearby star, 
+three or four series of five or seven images were taken 
+with an exposure time of 45 seconds per image. For details see Table~\ref{tab:serieslist}.
+For an example of a processed image see Fig.~\ref{fig:exampleseries}.
+
+When retrieving the approximate $\alpha$ and $\delta$ from JPL HORIZONS, 
+data was collected for the apparent $\alpha$ and $\delta$,
+which compensated for various systematic errors such as atmospheric distortion.
+However, the telescope already corrects for these effects, 
+and so the asteroid was always located near the edge of the image. 
+This error was discovered on July 19, and was eliminated in subsequent observations.
+
+To remove noise and `hot pixels' (pixels that had been overexposed by a cosmic ray), 
+%Jason: This IEEE format makes the apostrophe marks look weird. The left apostrophe goes from
+%the bottom left to the top right, while it should go from the top left to the bottom right. However,
+%I don't see any way of fixing it.
+%Pato: Yeah, I don't either. We should eventually switch to normal style.
+the images for each series were flat-field corrected, manually aligned, and median combined 
+using the MaxIm DL software by Diffraction Limited to form three processed images per observation.
+The asteroid was identified on the three processed images of each observation 
+by aligning and `blinking' (changing images over a short time period) the three images.
 
 \subsection{Least-Squares Plate Reduction}
 Using a Python program written by the authors that implements least-squares plate reduction (LSPR), 
